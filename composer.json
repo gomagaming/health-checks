@@ -1,0 +1,28 @@
+{
+    "name": "gomagaming/health-checks",
+    "description": "Backend Services Health Checks",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "GOMAWEBDEV, Lda.",
+            "email": "mail@gomadevelopment.pt"
+        }
+    ],
+    "require": {
+        "spatie/laravel-health": "^1.12",
+        "gomagaming/logs": ">=0.0.39"
+    },
+    "autoload": {
+        "psr-4": {
+            "GomaGaming\\HealthChecks\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GomaGaming\\HealthChecks\\GomaGamingHealthChecksServiceProvider"
+            ]
+        }
+    }
+}
