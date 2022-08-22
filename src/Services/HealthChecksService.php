@@ -82,15 +82,20 @@ class HealthChecksService
 
     public function serviceChecks(): void
     {
-        $this->healthChecks([
+        $checks = [
             DatabaseCheck::new(),
             RedisCheck::new()->connectionName('default'),
             CacheCheck::new(),
-            HorizonCheck::new(),
             DebugModeCheck::new(),
             EnvironmentCheck::new()->expectEnvironment('production'),
             UsedDiskSpaceCheck::new(),
-        ]);
+        ];
+        
+        if (app()->providerIsLoaded(HorizonServiceProvider::class)) {
+            array_push($checks, HorizonCheck::new());
+        }
+
+        $this->healthChecks($checks);
     }
 
     public function tasksChecks(): void
