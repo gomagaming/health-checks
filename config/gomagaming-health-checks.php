@@ -10,6 +10,7 @@ return [
         'api-gateway' => env('API_GATEWAY_URL'),
         'api-auth' => env('API_AUTH_URL'),
         'api-users' => env('API_USERS_URL'),
+        'api-sports' => env('API_SPORTS_URL'),
         'api-settings' => env('API_SETTINGS_URL'),
         'api-betting' => env('API_BETTING_URL'),
         'api-social' => env('API_SOCIAL_URL'),
