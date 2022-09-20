@@ -4,8 +4,6 @@ namespace GomaGaming\HealthChecks\Console;
 
 use GomaGaming\HealthChecks\Services\HealthChecksService;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class HealthCheckServices extends Command
 {
@@ -53,17 +51,10 @@ class HealthCheckServices extends Command
         $this->monitorServices();
     }
 
-    protected function loginAdmin()
-    {
-        Auth::login(User::first());
-    }
-
     protected function monitorGeneralServices()
     {
         if ($this->option('pingCheck')) 
         {
-            $this->loginAdmin();
-
             $this->healthChecksService->clearChecks();
 
             $this->healthChecksService->generalServicesChecks();
