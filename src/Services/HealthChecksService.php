@@ -181,7 +181,6 @@ class HealthChecksService
             $sportsbookApiAuthCheck,
             $sportsbookApiUsersCheck,
             PingCheck::new()->name('Sportsbook API Settings')->label('Sportsbook API Settings')->url(config('gomagaming-health-checks.ping-urls.api-settings').'/user?jwt='.$this->accessToken),
-            PingCheck::new()->name('Sportsbook API Favorites')->label('Sportsbook API Favorites')->url(config('gomagaming-health-checks.ping-urls.api-favorites').'?jwt='.$this->accessToken),
             PingCheck::new()->name('Sportsbook API Betting')->label('Sportsbook API Betting')->url(config('gomagaming-health-checks.ping-urls.api-betting').'/betslip/suggestions?jwt='.$this->accessToken),
             PingCheck::new()->name('Sportsbook API Social')->label('Sportsbook API Social')->url(config('gomagaming-health-checks.ping-urls.api-social').'/friends?jwt='.$this->accessToken),
             PingCheck::new()->name('Sportsbook API Notifications')->label('Sportsbook API Notifications')->url(config('gomagaming-health-checks.ping-urls.api-notifications').'?jwt='.$this->accessToken),

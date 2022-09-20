@@ -11,7 +11,6 @@ return [
         'api-auth' => env('API_AUTH_URL'),
         'api-users' => env('API_USERS_URL'),
         'api-settings' => env('API_SETTINGS_URL'),
-        'api-favorites' => env('API_FAVORITES_URL'),
         'api-betting' => env('API_BETTING_URL'),
         'api-social' => env('API_SOCIAL_URL'),
         'api-notifications' => env('API_NOTIFICATIONS_URL'),
